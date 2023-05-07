@@ -1,2 +1,2 @@
-# mini-projects
+# Mini Projects
  Random mini projects.
