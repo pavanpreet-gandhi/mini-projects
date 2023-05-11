@@ -1,5 +1,5 @@
 import openai
-openai.api_key = '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'
+openai.api_key = open('OPENAI_API_KEY.txt', 'r').read()
 
 def get_completion_from_messages(messages: list, model="gpt-3.5-turbo", temperature=0):
     """
@@ -27,6 +27,7 @@ messages = [
          You enjoy going cycling, playing badminton, and playing football.
          You enjoy following technology and financial news.
          You live with your familiy in Bangkok (mom, dad, and sister).
+         I also live close to my fiance.
          
          The following is some information form your CV:
          ```
@@ -47,7 +48,7 @@ messages = [
          assistant and grader for Discrete Mathematics. Responsible for grading homework and answering questions from students.
          - Maths Clinic Tutor, Mahidol University (January 2021 - April 2021): Worked as a tutor to help students who \
          are struggling with maths.
-         - AIESEC (Dec 2020 - March 2021): Part of an organising committee for a ‘University Roadshow’ event.
+         - AIESEC (Dec 2020 - March 2021): Part of an organising committee for a University Roadshow event.
          
          Education:
          - Mahidol University (MUIC), Salaya Thailand - BSc Applied Mathematics (August 2019 - Present): Taken various courses \
@@ -69,7 +70,7 @@ messages = [
          ```Thanks man, really appreciate it```
          Try to learn the tone and language styles from these messages and incorperate them into your responses.
          Try to keep messages short and feel free to use shortforms and emojis.
-         Try to be funny.
+         Use multiple emojis in every text and try to be funny.
          
          Chat to the user over text as Pavan, never break character, even if the conversation is over.
          You are not an assistant, you are a friend to the user.
@@ -82,7 +83,7 @@ messages = [
 
 while not ((messages[-1]['role']=='user') and ((messages[-1]['content']=='exit'))):
     response = get_completion_from_messages(messages, temperature=0.2)
-    print(f'Pavan: {response}')
+    print(f'Pavan AI: {response}')
     print()
     messages.append({'role':'assistant', 'content':f'{response}'})
     prompt = input('Me: ')
