@@ -89,3 +89,5 @@ while not ((messages[-1]['role']=='user') and ((messages[-1]['content']=='exit')
     prompt = input('Me: ')
     print()
     messages.append({'role':'user', 'content':f'{prompt}'})
+    
+# TODO: Make this a telegram bot (https://www.youtube.com/watch?v=vZtm1wuA2yc)
