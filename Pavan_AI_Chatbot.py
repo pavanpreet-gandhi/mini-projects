@@ -1,5 +1,5 @@
 import openai
-openai.api_key = open('OPENAI_API_KEY.txt', 'r').read()
+openai.api_key = open('OPENAI_API_KEY.txt', 'r').read() # Create a file called 'OPENAI_API_KEY.txt' and paste your own OpenAI API Key
 
 def get_completion_from_messages(messages: list, model="gpt-3.5-turbo", temperature=0):
     """
